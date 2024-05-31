@@ -1,7 +1,17 @@
+:root {
+    --bg-primary : #131c26;
+    --bg-secondary: #606478;
+    --bg-tertiary: #b0b8d5;
+
+    --fc-primary: #e5e9ef;
+    --fc-secondary: #b0b8d5;
+    --fc-dark: #131c26;
+}
+
 
 
 body {
-    background-color: #7574a8;
+    background-color: var(--bg-tertiary);
 }
 
 a {
@@ -9,8 +19,8 @@ a {
 }
 
 header {
-    background-color: #0f324d;
-    color: #e5b9e5;
+    background-color: var(--bg-primary);
+    color: var(--fc-primary);
     height: 60px;
     width: 100%;
     padding: 5px 20px;
@@ -20,7 +30,7 @@ header {
 }
 
 header h1{
-    color: #e5b9e5;
+    color: var(--fc-primary);
 }
 
 
@@ -48,13 +58,13 @@ header h1{
 
 .box__icon .icon {
     font-size: 46px;
-    color: #e5b9e5;
+    color: var(--fc-primary);
 
 }
 
 .box__icon .label {
     font-size: 18px;
     font-weight: bold;
-    color: #e5b9e5;
+    color: var(--fc-primary);
 
 }
