@@ -32,12 +32,14 @@
             <td>{{ $curso->curso }}</td>
             <td>{{ $curso->duracao }}</td>
             <td>{{ $curso->modalidade }}</td>
-            <td>
+            <td style="display: flex; gap: 5px;">
                 <form action="{{ route('cursos.destroy', $curso->idcurso) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Apagar</button>
+                    <button type="submit" class="btn btn-danger"> <ion-icon name="trash-outline"></ion-icon> Apagar</button>
                 </form>
+
+                <a href="{{ route('cursos.edit', $curso->idcurso) }}" class="btn btn-dark"><ion-icon name="create-outline"></ion-icon> Editar</a>
         
             </td>
         </tr>

@@ -11,16 +11,22 @@
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <!-- ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 
 </head>
 <body>
 
 <header>
 
-    <div class="logo">logo</div>
+    <div class="logo">
+        <ion-icon name="menu-outline" id="menu-resp" class="menu-resp"></ion-icon>
+    </div>
 
     <div class="logo_nome">
-        <a href="/"><h1>F CURSOS</h1></a>
+        <a href="/"><h5>Francis Cursos</h5></a>
     </div>
 
     <div class="foto">

@@ -71,7 +71,9 @@ class cursosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $curso = Cursos::findOrFail($id);
+
+       return view('cursos.editar',['curso'=>$curso]);
     }
 
     /**
@@ -79,7 +81,16 @@ class cursosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $curso = Cursos::findOrFail($id);
+
+        $curso->idcurso = $request->idcurso;
+        $curso->curso = $request->curso;
+        $curso->duracao = $request->duracao;
+        $curso->modalidade = $request->modalidade;
+        $curso->update();
+        //Cursos::findOrFail($id)->update($request->all());
+
+        return redirect()->route('cursos.index')->with('success', 'Curso editado com sucesso!');
     }
 
     /**
