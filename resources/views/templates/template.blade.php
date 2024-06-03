@@ -30,8 +30,11 @@
     </div>
 
     <div class="foto">
-        foto
+        User: {{ session('nome') }} - foto
+
+        <a href="{{ route('login.logout') }}">Sair</a>
     </div>
+
 
 </header>
 
