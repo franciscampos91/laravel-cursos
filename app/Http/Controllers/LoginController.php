@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -25,13 +25,24 @@ class LoginController extends Controller
         if($user == 'admin' and $pass == '1234') {
 
 
-            $user = new \App\Models\User([
+            $userData = [
                 'id' => '144795',
                 'name' => 'Administrador',
                 'email' => 'admin@fcursos.com.br',
                 'password' => $pass
                 // Adicione outros campos necessários aqui
-            ]);
+            ];
+
+            //verificar se o usuario ja existe
+            $user = User::where('email', 'admin@fcursos.com.br')->first();
+
+            if ($user) {
+                // Atualizar o usuário existente
+                $user->update($userData);
+            } else {
+                // Criar um novo usuário
+                $user = User::create($userData);
+            }
 
             // Inicializar o Auth manualmente
             Auth::login($user, $remember = true);
